@@ -1,0 +1,113 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+personal_configs=${HOME}/personal_configs/
+source ${personal_configs}/shared.sh
+    
+#####
+#Try editing the command line with vim, it's very sexy
+#
+autoload edit-command-line 
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
+
+
+#####
+#JDK
+#
+
+unset JAVA_HOME
+export JAVA8_HOME="$(/usr/libexec/java_home -v1.8)"
+export JAVA11_HOME="$(/usr/libexec/java_home -v11)"
+alias jdk_11='export JAVA_HOME="$JAVA11_HOME" && export PATH="$JAVA_HOME/bin:$PATH"'
+alias jdk_8='export JAVA_HOME="$JAVA8_HOME" && export PATH="$JAVA_HOME/bin:$PATH"'
+jdk_11 # Use jdk 11 as the default jdk
+
+
+
+eval "$(direnv hook zsh)"
+
+
+export PATH=$PATH:/opt/gradle/gradle-2.3/bin
+
+MAVEN=/usr/local/Cellar/maven@3.5/3.5.4_1/bin
+export PATH=$MAVEN:$PATH
+
+
+######
+#Peoples, places, things -- flattened
+####
+export HOME=/Users/connolly
+export FIEVEL=$HOME/fievel
+export NIGHTSWATCH=$FIEVEL/data/nightswatch
+export ZSHRC=$HOME/.zshrc
+export MARMARAY_HOME=/Users/connolly/marmaray
+
+
+export CASSANDRA_HOME=/usr/local/bin/cassandra/apache-cassandra-3.0.10
+export PATH=$PATH:$CASSANDRA_HOME/bin
+
+
+######
+#Uber cool commands
+####
+
+
+######
+#git Charlie Puth gud until autocompletion
+####
+
+autoload -Uz compinit && compinit
+
+AUTH=/Users/connolly/fievel/security/engsec/auth/src/main/java/com/uber/engsec/auth
+UPKICLIENT=/Users/connolly/fievel/security/engsec/auth/src/main/java/com/uber/engsec/auth/upkiclient
+test_start=/Users/connolly/marmaray/udeploy/scripts/test_start-docker.sh
+export PATH="/usr/local/sbin:$PATH"
+bindkey "^X\x7f" backward-kill-line
+export UDEPLOY_SCRIPTS=/users/connolly/marmaray/udeploy/scripts/
+alias date='/Users/connolly/.aw/pex_resources/scripts/binaries/gdate'
+
+alias /bin/bash=/usr/local/bin/bash
+
+export VISUAL=vim
+
+######
+#Common commands expediated
+####
+#$1 is the index from the start, $2 is the column number you want
+function grab() { head -${1} | tail -1 | awk -v column="$2" '{ print $(column); }' }
+
+
+#up the level of power
+ZSH_THEME="powerlevel10k/powerlevel10k"
+##for hoover staging validations
+export WONKA_TOKEN_FILE_LOCATION="/tmp/wonka.json"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias marmaray='cd /users/connolly/marmaray'
+export cli=/users/connolly/marmaray/marmaray-uber-tools/src/main/cli
+
+
+alias nw="mkdir $1 && cd $1"
+export PATH="$PATH:`pwd`/flutter/bin"
+export PATH=$PATH:`pwd`/flutter/bin
+
+config_files=(
+    devpod_cli.sh
+    git_functions.sh
+    uber_variables.sh
+)
+for f in $config_files; do
+    source ${personal_configs}/$f
+done
+bindkey -e
+bindkey \^J backward-kill-line
