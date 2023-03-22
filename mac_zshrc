@@ -6,8 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-personal_configs=${HOME}/personal_configs/
-source ${personal_configs}/shared.sh
+zshrcs=${HOME}/zshrcs/
+source ${zshrcs}/shared.sh
     
 #####
 #Try editing the command line with vim, it's very sexy
@@ -107,7 +107,7 @@ config_files=(
     uber_variables.sh
 )
 for f in $config_files; do
-    source ${personal_configs}/$f
+    source ${zshrcs}/$f
 done
 bindkey -e
 bindkey \^J backward-kill-line

@@ -4,5 +4,5 @@ config_files=(
     uber_functions.sh
 )
 for f in $config_files; do
-    source ${personal_configs}/$f
+    source ${zshrcs}/$f
 done

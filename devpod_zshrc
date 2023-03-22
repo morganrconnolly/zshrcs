@@ -1,11 +1,11 @@
 HOME=/home/user
-personal_configs=${HOME}/personal_configs/
+zshrcs=${HOME}/zshrcs/
 config_files=(
     devpod_functions.sh
     hdfs_variables.sh
 )
 for f in $config_files; do
-    source ${personal_configs}/$f
+    source ${zshrcs}/$f
 done
 # Set up the prompt
 
