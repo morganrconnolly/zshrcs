@@ -2,7 +2,9 @@ HOME=/home/user
 zshrcs=${HOME}/zshrcs/
 config_files=(
     devpod_functions.sh
+    git_functions.sh
     hdfs_variables.sh
+    uber_variables.sh
 )
 for f in $config_files; do
     source ${zshrcs}/$f
