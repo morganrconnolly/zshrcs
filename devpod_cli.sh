@@ -1,5 +1,6 @@
 
 dssh() {
+    ssh-add $HOME/.ssh/id_ecdsa
     set -x
     devpod wait $1 && ssh -A connolly-$1.devpod-us-or
     unset -x
