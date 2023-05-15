@@ -1,3 +1,6 @@
+marmaray=${HOME}/marmaray
+alias marmaray="cd $marmaray"
+
 cli=${HOME}/marmaray/marmaray-uber-tools/src/main/cli
 alias cli="cd $cli"
 
