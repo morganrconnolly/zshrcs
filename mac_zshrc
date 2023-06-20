@@ -111,3 +111,5 @@ for f in $config_files; do
 done
 bindkey -e
 bindkey \^J backward-kill-line
+
+export DATA_DEVPOD=connolly-datadev.devpod-us-or
