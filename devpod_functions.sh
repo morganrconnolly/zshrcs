@@ -9,5 +9,5 @@ kinit_hoover () {
 }
 
 cerberuses () {
-	cerberus -s marmaray-job-manager,nightswatch,watchtower-service,umonitor,piper-web -t umonitor --no-status-page
+	cerberus -s marmaray-job-manager,nightswatch,watchtower-service,umonitor,piper-web,exeggutor -t umonitor --no-status-page
 }
