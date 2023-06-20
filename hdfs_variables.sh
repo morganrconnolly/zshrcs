@@ -1,2 +1,2 @@
-dca1='hdfs://ns-router-dca1/'
-phx2='hdfs://ns-router-prod-phx/'
+dca='hdfs://ns-router-dca1/'
+phx='hdfs://ns-router-prod-phx/'
