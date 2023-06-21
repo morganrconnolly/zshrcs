@@ -1,3 +1,4 @@
+zshrcs=${HOME}/zshrcs/
 define_shortcut() {
     declare $1=$2
     alias $1="cd $2"

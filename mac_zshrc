@@ -5,9 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-zshrcs=${HOME}/zshrcs/
-source ${zshrcs}/shared.sh
+HOME=/Users/connolly
+source `pwd`/shared.sh
     
 #####
 #Try editing the command line with vim, it's very sexy
