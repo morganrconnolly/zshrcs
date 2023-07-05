@@ -5,3 +5,7 @@ deploy_branch () {
     up compute deploy -b $buildID -s $2 -e $3
     set +e
 }
+
+cerberuses () {
+cerberus -s marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web -t umonitor,queryrunner,query-result  --enable-container-access --container-access-port=2345  --no-status-page
+}
