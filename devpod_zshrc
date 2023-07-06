@@ -1,4 +1,5 @@
 HOME=/home/user
+zshrcs=${HOME}/zshrcs
 source ${zshrcs}/shared.sh
 
 config_files=(
