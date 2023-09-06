@@ -1,7 +1,7 @@
 define_shortcut cli ${HOME}/marmaray/marmaray-uber-tools/src/main/cli
 
-#cli=${HOME}/marmaray/marmaray-uber-tools/src/main/cli
-#alias cli="cd $cli"
+cli=${HOME}/marmaray/marmaray-uber-tools/src/main/cli
+alias cli="cd $cli"
 marmaray=${HOME}/marmaray
 alias marmaray="cd $marmaray"
 
