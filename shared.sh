@@ -13,3 +13,7 @@ config_files=(
 for f in $config_files; do
     source ${zshrcs}/$f
 done
+
+source_zshrc () {
+    source ~/.zshrc
+}

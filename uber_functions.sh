@@ -12,9 +12,12 @@ cerberus -s marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryr
 }
 #branch region pipeline_ids
 piperdev_deploy () {
-    if [[ -z ${$3+x} ]]; then
-        piperdev deploy $1 pipelines/core/hadoop_platform  --pipeline_ids $3 $2
-    else
+    #if $3 is the empty string, will still return true
+    if [ -z ${3+x} ]; then
+        echo piperdev deploy $1 pipelines/core/hadoop_platform $2
         piperdev deploy $1 pipelines/core/hadoop_platform $2
+    else
+        echo piperdev deploy $1 pipelines/core/hadoop_platform  --pipeline_ids $3 $2
+        piperdev deploy $1 pipelines/core/hadoop_platform  --pipeline_ids $3 $2
     fi
 }
