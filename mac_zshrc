@@ -97,8 +97,7 @@ export cli=/users/connolly/marmaray/marmaray-uber-tools/src/main/cli
 
 
 alias nw="mkdir $1 && cd $1"
-export PATH="$PATH:`pwd`/flutter/bin"
-export PATH=$PATH:`pwd`/flutter/bin
+export PATH=$PATH:$HOME/flutter/flutter/bin
 
 config_files=(
     devpod_cli.sh
