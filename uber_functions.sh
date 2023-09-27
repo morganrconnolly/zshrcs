@@ -21,3 +21,11 @@ piperdev_deploy () {
         piperdev deploy $1 pipelines/core/hadoop_platform  --pipeline_ids $3 $2
     fi
 }
+
+#host, service
+container_ssh () {
+    compute-cli config set scope.host $1
+    container_id=`compute-cli ps | grep $2 | grab 1 3`  
+    echo $container_id
+    compute-cli  exec $container_id 
+}
