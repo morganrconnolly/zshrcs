@@ -8,7 +8,7 @@ deploy_branch () {
 }
 
 cerberuses () {
-cerberus -s data-failover-orchestrator,marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web -t umonitor,queryrunner,query-result  --enable-container-access --container-access-port=2345  --no-status-page
+cerberus -s watchtower-service,data-failover-orchestrator,marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web -t umonitor,queryrunner,query-result  --enable-container-access --container-access-port=2345  --no-status-page
 }
 #branch region pipeline_ids
 piperdev_deploy () {
