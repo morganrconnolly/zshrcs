@@ -9,6 +9,7 @@ config_files=(
     uber_variables.sh
     uber_functions.sh
     life_variables.sh
+    functions.sh
 )
 for f in $config_files; do
     source ${zshrcs}/$f

@@ -8,7 +8,7 @@ deploy_branch () {
 }
 
 cerberuses () {
-cerberus -s watchtower-service,data-failover-orchestrator,marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web,cloudlake-migrator,cloudlake-mesh-production-us-east4 -t umonitor,queryrunner,query-result -r cloudlake-migrator,cloudlake-mesh-production-us-east4  --enable-container-access --container-access-port=2345  --no-status-page
+cerberus -s watchtower-service,data-failover-orchestrator,marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web,cloudlake-migrator,cloudlake-mesh-production-us-east4 -t moncon-meta,moncon-staging,moncon,umonitor,queryrunner,query-result -r cloudlake-migrator,cloudlake-mesh-production-us-east4  --enable-container-access --container-access-port=2345  --no-status-page
 }
 #branch region pipeline_ids
 piperdev_deploy () {
@@ -30,3 +30,4 @@ container_ssh () {
     compute-cli  exec $container_id 
 }
 define_shortcut darktower ${HOME}/darktower
+define_shortcut $1 $2
