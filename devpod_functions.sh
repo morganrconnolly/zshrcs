@@ -10,6 +10,9 @@ kinit_hoover () {
 
 gcp_hadoop_session_setup () {
 	export HADOOP_CONF_DIR=/home/user/cfs/conf && source /home/user/cfs/conf/hadoop-env.sh
+	echo 'testing connection to gcp'
+	echo 'hadoop fs -ls cfs://ns-cloudlake/'
+	hadoop fs -ls cfs://ns-cloudlake/
 }
 
 gcp_hadoop_setup () {
