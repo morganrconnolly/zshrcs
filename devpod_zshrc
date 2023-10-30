@@ -14,15 +14,6 @@ HOME=/home/user
 zshrcs=${HOME}/zshrcs
 source ${zshrcs}/init.sh
 
-config_files=(
-    devpod_functions.sh
-    git_functions.sh
-    hdfs_variables.sh
-    uber_variables.sh
-)
-for f in $config_files; do
-    source ${zshrcs}/$f
-done
 # Set up the prompt
 
 autoload -Uz promptinit

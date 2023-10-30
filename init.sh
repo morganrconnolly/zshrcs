@@ -1,6 +1,8 @@
+
 define_shortcut() {
     declare "$1"="$2"
     alias $1="cd $2"
+    echo $cli
 }
 
 zshrcs=${HOME}/zshrcs/
