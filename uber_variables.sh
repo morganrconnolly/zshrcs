@@ -1,27 +1,22 @@
 define_shortcut cli ${HOME}/marmaray/marmaray-uber-tools/src/main/cli
 define_shortcut fievel ${HOME}/fievel
 define_shortcut watchtower ${fievel}/data/data-ingestion/watchtower-service
-define_shortcut allocation  ${marmaray}/marmaray-uber-tools/src/main/java/com/uber/marmaray/tools/hoover/allocation
+watchtower=${fievel}/data/data-ingestion/watchtower-service
+
 define_shortcut pcp ${HOME}/piper-core-pipelines
+pcp=${HOME}/piper-core-pipelines
 define_shortcut piper ${HOME}/piper
 define_shortcut marmaray ${HOME}/marmaray
 define_shortcut cloudlake_tools ${cli}/cloudlake_tools
+cloudlake_tools=${cli}/cloudlake_tools
 
 
-#alias piper-core-pipelines="cd $piper-core-pipelines"
-#cli=${HOME}/marmaray/marmaray-uber-tools/src/main/cli
-#alias cli="cd $cli"
+cli=${HOME}/marmaray/marmaray-uber-tools/src/main/cli
+fievel=${HOME}/fievel
 
-#marmaray=${HOME}/marmaray
-#alias marmaray="cd $marmaray"
+marmaray=${HOME}/marmaray
 
 
-#fievel=${HOME}/fievel
-#alias fievel="cd $fievel"
-#
-#watchtower=${fievel}/data/data-ingestion/watchtower-service
-#alias watchtower="cd ${watchtower}"
-#
-#allocation=/users/connolly/marmaray/marmaray-uber-tools/src/main/java/com/uber/marmaray/tools/hoover/allocation
-#alias allocation="cd ${allocation}"
+
+watchtower=${fievel}/data/data-ingestion/watchtower-service
 
