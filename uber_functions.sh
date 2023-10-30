@@ -28,3 +28,4 @@ container_ssh () {
     compute-cli  exec $container_id 
 }
 define_shortcut darktower ${HOME}/darktower
+define_shortcut alerts /Users/connolly/config/observability/alerts/data/ingestion
