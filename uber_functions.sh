@@ -29,3 +29,5 @@ container_ssh () {
 }
 define_shortcut darktower ${HOME}/darktower
 define_shortcut alerts /Users/connolly/config/observability/alerts/data/ingestion
+a=b
+alias a=cd b

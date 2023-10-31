@@ -1,3 +1,4 @@
+#!/bin/bash
 define_shortcut cli ${HOME}/marmaray/marmaray-uber-tools/src/main/cli
 define_shortcut fievel ${HOME}/fievel
 define_shortcut watchtower ${fievel}/data/data-ingestion/watchtower-service
@@ -18,5 +19,4 @@ marmaray=${HOME}/marmaray
 
 
 
-watchtower=${fievel}/data/data-ingestion/watchtower-service
 

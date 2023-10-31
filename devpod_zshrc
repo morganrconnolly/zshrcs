@@ -13,6 +13,7 @@
 HOME=/home/user
 zshrcs=${HOME}/zshrcs
 source ${zshrcs}/init.sh
+source ${zshrcs}/devpod_functions.sh
 
 # Set up the prompt
 

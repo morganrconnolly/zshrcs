@@ -1,7 +1,12 @@
-
+#deprecated due to not working on devpod for great mystery
 define_shortcut() {
     declare "$1"="$2"
     alias $1="cd $2"
+}
+#use this
+create_shortcut() {
+  echo "$1"="$2" >> uber_functions.sh
+  echo alias $1="cd $2" >> uber_functions.sh
 }
 
 zshrcs=${HOME}/zshrcs/
