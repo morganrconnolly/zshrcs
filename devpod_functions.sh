@@ -10,7 +10,7 @@ kinit_hoover () {
 }
 
 gcp_hadoop_session_setup () {
-	kinit
+	kinit connolly
 	export HADOOP_CONF_DIR=/home/user/cfs/conf && source /home/user/cfs/conf/hadoop-env.sh
 	echo 'testing connection to gcp'
 	echo 'hadoop fs -ls cfs://ns-cloudlake/'
@@ -28,8 +28,8 @@ gcp_hadoop_setup () {
 		git clone gitolite@code.uber.internal:data/dsc-builder
 		cat "export HADOOP_HOME='/home/user/cfs/binary'" >> /home/user/cfs/conf/hadoop-env.sh
 	fi
-	IP=`uns uns://dca8/dca8-prod06/us1/storage-access-service/prod-cloudlake/compute-0 | head -1 | awk '{ print $2 }'`
-	PORT=`uns uns://dca8/dca8-prod06/us1/storage-access-service/prod-cloudlake/compute-0 | head -1 | awk ' { print $3 } ' | sed 's/^grpc://'`
+	IP=`uns uns://dca11/dca11-stateless01/us1/storage-access-service/prod-cloudlake/compute-0 | head -1 | awk '{ print $2 }'`
+	PORT=`uns  uns://dca11/dca11-stateless01/us1/storage-access-service/prod-cloudlake/compute-0 | head -1 | awk ' { print $3 } ' | sed 's/^grpc://'`
 	ssh -4 -fMNL 5435:$IP:$PORT bastion.uber.com
 	gcp_hadoop_session_setup
 	set +x
