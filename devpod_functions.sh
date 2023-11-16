@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+INSTANCE=uns://dca11/dca11-kubernetes-stateless01/us1/storage-access-service/prod-cloudlake/compute-0
 hoover_keytab () {
     usecretv2-cli --namespace keytab read DATASRE.PROD.UBER.INTERNAL/services/hoover.keytab > $HOME/hoover.keytab
 }
@@ -26,10 +26,10 @@ gcp_hadoop_setup () {
 		sudo ln -s /opt/hadoop/hadoop-2.8.2-1310959 /home/user/cfs/binary 
 		mkdir -p /home/user/cfs/conf
 		git clone gitolite@code.uber.internal:data/dsc-builder
-		cat "export HADOOP_HOME='/home/user/cfs/binary'" >> /home/user/cfs/conf/hadoop-env.sh
 	fi
-	IP=`uns uns://dca11/dca11-stateless01/us1/storage-access-service/prod-cloudlake/compute-0 | head -1 | awk '{ print $2 }'`
-	PORT=`uns  uns://dca11/dca11-stateless01/us1/storage-access-service/prod-cloudlake/compute-0 | head -1 | awk ' { print $3 } ' | sed 's/^grpc://'`
+	cat "export HADOOP_HOME='/home/user/cfs/binary'" >> /home/user/cfs/conf/hadoop-env.sh
+	IP=`uns ${INSTANCE} | head -1 | awk '{ print $2 }'`
+	PORT=`uns  ${INSTANCE} | head -1 | awk ' { print $3 } ' | sed 's/^grpc://'`
 	ssh -4 -fMNL 5435:$IP:$PORT bastion.uber.com
 	gcp_hadoop_session_setup
 	set +x
