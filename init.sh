@@ -3,13 +3,17 @@ define_shortcut() {
     declare "$1"="$2"
     alias $1="cd $2"
 }
-#use this
-create_shortcut() {
-  echo "$1"="$2" >> uber_functions.sh
-  echo alias $1="cd $2" >> uber_functions.sh
-}
 
 zshrcs=${HOME}/zshrcs/
+#use this
+create_shortcut() {
+    set -x
+  echo "$1"="$2" >> ${zshrcs}/uber_functions.sh
+  echo alias $1=\"cd $2\" >> ${zshrcs}/uber_functions.sh
+  source ${zshrcs}/uber_functions.sh
+set +x
+}
+
 
 config_files=(
     git_functions.sh
