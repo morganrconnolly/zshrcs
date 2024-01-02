@@ -8,6 +8,12 @@ deploy_branch () {
 cerberuses () {
 cerberus -s watchtower-service,data-failover-orchestrator,marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web -t moncon-meta,moncon-staging,moncon,umonitor,queryrunner,query-result -r cloudlake-migrator,cloudlake-mesh-production-us-east4  --enable-container-access --container-access-port=2345  --no-status-page
 }
+
+cloudlake-migration-cerberuses () {
+
+cerberus -s watchtower-service,marmaray-job-manager,hive-sync-web  -r cloudlake-migrator,cloudlake-mesh-production-us-east4  --enable-container-access --container-access-port=2345  --no-status-page --containerized-gateway-uns uns://phx2/phx2-kubernetes-stateless01/us1/cerberus-gateway-container/production/compute-0
+ 
+}
 #branch region pipeline_ids
 piperdev_deploy () {
     #if $3 is the empty string, will still return true
@@ -27,9 +33,9 @@ container_ssh () {
     echo $container_id
     compute-cli  exec $container_id 
 }
+marmaray_build () {
+    mvn package -DskipTests=true
+}
 define_shortcut darktower ${HOME}/darktower
+define_shortcut obs_alerts /Users/connolly/config/observability/alerts/infra/portability/workspace/hoover
 define_shortcut alerts /Users/connolly/config/observability/alerts/data/ingestion
-obs_alerts=/Users/connolly/config/observability/alerts/infra/portability/workspace/hoover
-alias obs_alerts=cd /Users/connolly/config/observability/alerts/infra/portability/workspace/hoover
-obs_alerts=/Users/connolly/config/observability/alerts/infra/portability/workspace/hoover
-alias obs_alerts="cd /Users/connolly/config/observability/alerts/infra/portability/workspace/hoover"

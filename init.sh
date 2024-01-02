@@ -1,8 +1,4 @@
 #deprecated due to not working on devpod for great mystery
-define_shortcut() {
-    declare "$1"="$2"
-    alias $1="cd $2"
-}
 
 zshrcs=${HOME}/zshrcs/
 #use this
@@ -28,4 +24,8 @@ done
 
 source_zshrc () {
     source ~/.zshrc
+}
+define_shortcut() {
+    declare "$1"="$2"
+    alias $1="cd $2"
 }

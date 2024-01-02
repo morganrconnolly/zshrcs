@@ -1,4 +1,9 @@
-#!/bin/bash
+
+define_shortcut() {
+    typeset -g $1=$2
+    alias $1="cd $2"
+}
+
 define_shortcut cli ${HOME}/marmaray/marmaray-uber-tools/src/main/cli
 define_shortcut fievel ${HOME}/fievel
 define_shortcut watchtower ${fievel}/data/data-ingestion/watchtower-service
