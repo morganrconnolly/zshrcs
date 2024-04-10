@@ -6,7 +6,7 @@ deploy_branch () {
 }
 
 cerberuses () {
-cerberus -s cloudlake-mesh-production-us-east4,watchtower-service,data-failover-orchestrator,marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web -t moncon-meta,moncon-staging,moncon,umonitor,queryrunner,query-result -r cloudlake-migrator,cloudlake-mesh-production-us-east4  --enable-container-access --container-access-port=2345  --no-status-page
+cerberus -s schema-service,cloudlake-mesh,cloudlake-mesh-production-us-east4,watchtower-service,data-failover-orchestrator,marmaray-job-manager,nightswatch,hive-sync-web,statsdex_query,queryrunner,querybuilder,wonkamaster,query-result,exeggutor,piper-web -t moncon-meta,moncon-staging,moncon,umonitor,queryrunner,query-result -r cloudlake-migrator,cloudlake-mesh-production-us-east4  --enable-container-access --container-access-port=2345  --no-status-page
 }
 
 cloudlake-migration-cerberuses () {
