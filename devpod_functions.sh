@@ -35,3 +35,4 @@ gcp_hadoop_setup () {
 	set +x
 			
 }
+alias beeline-phx-cloud=beeline-cloudlake-phx-prod
