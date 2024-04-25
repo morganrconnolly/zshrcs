@@ -22,7 +22,7 @@ for f in $config_files; do
     source ${zshrcs}/$f
 done
 
-source_zshrc () {
+zource () {
     source ~/.zshrc
 }
 define_shortcut() {
