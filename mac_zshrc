@@ -111,3 +111,7 @@ bindkey -e
 bindkey \^J backward-kill-line
 
 export DATA_DEVPOD=connolly-datadev.devpod-us-or
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
