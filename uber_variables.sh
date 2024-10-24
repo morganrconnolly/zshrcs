@@ -26,3 +26,4 @@ marmaray=${HOME}/marmaray
 
 define_shortcut hdrone ${HOME}/hdrone-new
 define_shortcut resources ${hdrone}/hdrone-api/src/main/resources
+define_shortcut mjm ${HOME}/mjm
